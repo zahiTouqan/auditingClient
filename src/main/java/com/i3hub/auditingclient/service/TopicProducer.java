@@ -1,4 +1,4 @@
-package com.i3hub.auditingclient;
+package com.i3hub.auditingclient.service;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

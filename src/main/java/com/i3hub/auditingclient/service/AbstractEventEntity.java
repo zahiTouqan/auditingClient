@@ -1,4 +1,4 @@
-package com.i3hub.auditingclient;
+package com.i3hub.auditingclient.service;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;

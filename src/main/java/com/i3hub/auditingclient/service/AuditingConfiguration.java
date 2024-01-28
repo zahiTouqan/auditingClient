@@ -1,4 +1,4 @@
-package com.i3hub.auditingclient;
+package com.i3hub.auditingclient.service;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
