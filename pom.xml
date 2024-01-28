@@ -11,6 +11,7 @@
     <groupId>com.i3hub.auditing</groupId>
     <artifactId>auditingClient</artifactId>
     <name>auditingClient</name>
+    <version>1.0</version>
     <description>auditingClient</description>
     <properties>
         <java.version>17</java.version>
@@ -93,7 +94,25 @@
                         <target>1.8</target>
                     </configuration>
                 </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>${maven-compiler-plugin.version}</version>
+                    <configuration>
+                        <source>${java.version}</source>
+                        <target>${java.version}</target>
+                        <parameters>true</parameters>
+                        <annotationProcessorPaths>
+                            <path>
+                                <groupId>org.projectlombok</groupId>
+                                <artifactId>lombok</artifactId>
+                                <version>${lombok.version}</version>
+                            </path>
+                        </annotationProcessorPaths>
+                    </configuration>
+                </plugin>
             </plugins>
+
         </pluginManagement>
         <plugins>
             <plugin>
