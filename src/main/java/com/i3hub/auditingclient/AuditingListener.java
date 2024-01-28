@@ -1,4 +1,4 @@
-package com.i3hub.auditingclient.service;
+package com.i3hub.auditingclient;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.core.JsonProcessingException;

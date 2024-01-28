@@ -1,4 +1,4 @@
-package com.i3hub.auditingclient.service;
+package com.i3hub.auditingclient;
 
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import org.springframework.beans.factory.annotation.Value;

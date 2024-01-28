@@ -1,4 +1,4 @@
-package com.i3hub.auditingclient.service;
+package com.i3hub.auditingclient;
 
 import org.springframework.data.domain.AuditorAware;
 

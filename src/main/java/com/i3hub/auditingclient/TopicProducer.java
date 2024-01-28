@@ -1,4 +1,4 @@
-package com.i3hub.auditingclient.service;
+package com.i3hub.auditingclient;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -7,8 +7,11 @@ import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
 @Service
-@RequiredArgsConstructor
 public class TopicProducer {
+
+    public TopicProducer(KafkaTemplate<String, String> kafkaTemplate) {
+        this.kafkaTemplate = kafkaTemplate;
+    }
 
     @Value("${auditing.topic}")
     private String topicName;
