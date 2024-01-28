@@ -7,7 +7,6 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 import jakarta.persistence.PostPersist;
 import jakarta.persistence.PostRemove;
 import jakarta.persistence.PostUpdate;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.configurationprocessor.json.JSONException;
@@ -21,15 +20,15 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 @Component
-@RequiredArgsConstructor
 public class AuditingListener {
 
     private final ExecutorService EXECUTOR = Executors.newCachedThreadPool();
 
-    private final TopicProducer TOPICPRODUCER;
+    @Autowired
+    private TopicProducer topicProducer;
 
     @Autowired
-    private final HTTPClientService httpClientService;
+    private HTTPClientService httpClientService;
 
     @Value("${auditing.rest:true}")
     private boolean auditingRest;
@@ -126,7 +125,7 @@ public class AuditingListener {
         if (auditingRest) {
             httpClientService.makeRequest(objectNode);
         } else {
-            TOPICPRODUCER.send(objectNode.toString());
+            topicProducer.send(objectNode.toString());
         }
     }
 }
