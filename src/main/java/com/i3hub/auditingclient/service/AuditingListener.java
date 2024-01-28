@@ -26,7 +26,6 @@ public class AuditingListener {
 
     private final ExecutorService EXECUTOR = Executors.newCachedThreadPool();
 
-    @Autowired
     private final TopicProducer TOPICPRODUCER;
 
     @Autowired
