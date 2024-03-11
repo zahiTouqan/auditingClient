@@ -114,6 +114,14 @@ public class AuditingListener {
     public static Long getCurrentUserId() {
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         if (principal instanceof Jwt jwt) {
+            Object userId = jwt.getClaim("user_id");
+            if (userId instanceof Long) {
+                return (Long) userId;
+            } else if (userId instanceof Integer) {
+                return ((Integer) userId).longValue();
+            } else if (userId instanceof String) {
+                return Long.parseLong((String) userId);
+            }
             return jwt.getClaim("user_id");
         } else {
             return null;
